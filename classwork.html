@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="max-width: 100%;" style="flex-wrap: wrap;">
+    <input type="text" id="names">
+    <button onclick="addName()" id="add">Add</button>
+    <input type="text" id="remove">
+    <button onclick="removeName()" id="remove">remove</button>
+    <h1 id="display" ></h1>
+
+    <script>
+          let name=[]   
+        function addName(){
+            let input =document.getElementById('names')
+            let btn =document.getElementById('add')
+            let  display=document.getElementById('display')
+           name.push(input.value)
+    
+            display.innerHTML = name.join('<br>')
+        console.log(name)
+        }
+
+        function removeName() {
+            let remove = document.getElementById('remove')
+            if (name.includes (remove.value) == true){
+                name.splice(name.indexOf(remove.value),1)
+                display.innerHTML = name.join('<br>')
+            }else{
+                alert('Not Found')
+            }
+        }
+        function display(){
+            
+        }
+    </script>
+</body>
+</html>
